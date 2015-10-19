@@ -1,0 +1,437 @@
+﻿<Controls:MetroWindow x:Class="Trackball_Project.IconWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+                      
+        Title="아이콘 변경" TitlebarHeight="40" TitleForeground="White"
+        Width="280" Height="530"
+        ResizeMode="NoResize" Icon="/Image/icon/Icon.png">
+    <Grid>
+        <!-- 0 -->
+        <Button Name="button0" Width="50" Height="50" Margin="10, 10, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ChangeModeImage">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image Name="icon" Source="/Image/icon/0.png"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <!-- 1 -->
+        <Button Name="button1" Width="50" Height="50" Margin="80, 10, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ChangeModeImage">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image Name="icon" Source="/Image/icon/1.png"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <!-- 2 -->
+        <Button Name="button2" Width="50" Height="50" Margin="150, 10, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ChangeModeImage">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image Name="icon" Source="/Image/icon/2.png"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <!-- 3 -->
+        <Button Name="button3" Width="50" Height="50" Margin="220, 10, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ChangeModeImage">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image Name="icon" Source="/Image/icon/3.png"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <!-- 4 -->
+        <Button Name="button4" Width="50" Height="50" Margin="10, 80, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ChangeModeImage">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image Name="icon" Source="/Image/icon/4.png"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <!-- 5 -->
+        <Button Name="button5" Width="50" Height="50" Margin="80, 80, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ChangeModeImage">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image Name="icon" Source="/Image/icon/5.png"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <!-- 6 -->
+        <Button Name="button6" Width="50" Height="50" Margin="150, 80, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ChangeModeImage">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image Name="icon" Source="/Image/icon/6.png"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <!-- 7 -->
+        <Button Name="button7" Width="50" Height="50" Margin="220, 80, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ChangeModeImage">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image Name="icon" Source="/Image/icon/7.png"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <!-- 8 -->
+        <Button Name="button8" Width="50" Height="50" Margin="10, 150, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ChangeModeImage">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image Name="icon" Source="/Image/icon/8.png"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <!-- 9 -->
+        <Button Name="button9" Width="50" Height="50" Margin="80, 150, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ChangeModeImage">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image Name="icon" Source="/Image/icon/9.png"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <!-- 10 -->
+        <Button Name="button10" Width="50" Height="50" Margin="150, 150, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ChangeModeImage">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image Name="icon" Source="/Image/icon/10.png"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <!-- 11 -->
+        <Button Name="button11" Width="50" Height="50" Margin="220, 150, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ChangeModeImage">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image Name="icon" Source="/Image/icon/11.png"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <!-- 12 -->
+        <Button Name="button12" Width="50" Height="50" Margin="10, 220, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ChangeModeImage">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image Name="icon" Source="/Image/icon/12.png"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <!-- 13 -->
+        <Button Name="button13" Width="50" Height="50" Margin="80, 220, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ChangeModeImage">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image Name="icon" Source="/Image/icon/9.png"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <!-- 14 -->
+        <Button Name="button14" Width="50" Height="50" Margin="150, 220, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ChangeModeImage">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image Name="icon" Source="/Image/icon/14.png"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <!-- 15 -->
+        <Button Name="button15" Width="50" Height="50" Margin="220, 220, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ChangeModeImage">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image Name="icon" Source="/Image/icon/15.png"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <!-- 16 -->
+        <Button Name="button16" Width="50" Height="50" Margin="10, 290, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ChangeModeImage">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image Name="icon" Source="/Image/icon/16.png"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <!-- 17 -->
+        <Button Name="button17" Width="50" Height="50" Margin="80, 290, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ChangeModeImage">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image Name="icon" Source="/Image/icon/17.png"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <!-- 18 -->
+        <Button Name="button18" Width="50" Height="50" Margin="150, 290, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ChangeModeImage">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image Name="icon" Source="/Image/icon/18.png"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <!-- 19 -->
+        <Button Name="button19" Width="50" Height="50" Margin="220, 290, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ChangeModeImage">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image Name="icon" Source="/Image/icon/19.png"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <!-- 20 -->
+        <Button Name="button20" Width="50" Height="50" Margin="10, 360, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ChangeModeImage">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image Name="icon" Source="/Image/icon/20.png"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <!-- 21 -->
+        <Button Name="button21" Width="50" Height="50" Margin="80, 360, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ChangeModeImage">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image Name="icon" Source="/Image/icon/21.png"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <!-- 22 -->
+        <Button Name="button22" Width="50" Height="50" Margin="150, 360, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ChangeModeImage">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image Name="icon" Source="/Image/icon/22.png"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <!-- 23 -->
+        <Button Name="button23" Width="50" Height="50" Margin="220, 360, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ChangeModeImage">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image Name="icon" Source="/Image/icon/23.png"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <!-- 24 -->
+        <Button Name="button24" Width="50" Height="50" Margin="10, 430, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ChangeModeImage">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image Name="icon" Source="/Image/icon/24.png"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <!-- 25 -->
+        <Button Name="button25" Width="50" Height="50" Margin="80, 430, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ChangeModeImage">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image Name="icon" Source="/Image/icon/25.png"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <!-- 26 -->
+        <Button Name="button26" Width="50" Height="50" Margin="150, 430, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ChangeModeImage">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image Name="icon" Source="/Image/icon/26.png"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <!-- 27 -->
+        <Button Name="button27" Width="50" Height="50" Margin="220, 430, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ChangeModeImage">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image Name="icon" Source="/Image/icon/27.png"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+</Controls:MetroWindow>

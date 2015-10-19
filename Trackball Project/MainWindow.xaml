@@ -1,0 +1,325 @@
+﻿<Controls:MetroWindow x:Class="Trackball_Project.MainWindow"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+                      
+                      Title="데굴데굴" TitlebarHeight="40" TitleForeground="White" 
+                      Height="600" Width="800"
+                      ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Icon="/Image/Marker.png"
+                      Closing="Window_Closing">
+
+    <Controls:MetroWindow.Flyouts>
+        <Controls:FlyoutsControl>
+            <!-- 커스텀 페이지 구현 -->
+            <Controls:Flyout Name="TrackballPage" Margin="0, 0, 0, 0" VerticalAlignment="Top" Header="Back" Position="Right" Width="800" Height="520" Theme="Light">
+                <Grid>
+                    <Image Name="Custom_Icon" Source="/Image/Custom Background.png" Width="30" Margin="60, 0, 0, 380" HorizontalAlignment="Left"/>
+                    <TextBlock Name="Custom_Page_Title" Width="200" Height="100" FontSize="20" Margin="100, 0, 0, 300" HorizontalAlignment="Left">사용자 설정</TextBlock>
+
+                    <Image Name="ModeIconImage" Width="50" Height="50" Margin="100, 0, 0, 220" HorizontalAlignment="Left" Source="/Image/icon/0.png"/>
+                    <Button Name="ModeIcon" Width="80" Height="30" Margin="85, 0, 0, 110" HorizontalAlignment="Left" Click="ModeImageChange" BorderThickness="0" Focusable="False" FontSize="12">아이콘 변경</Button>
+                    <ComboBox Name="ModeComboBox" Width="180" Height="40" Margin="180, 0, 0, 220" HorizontalAlignment="Left" SelectionChanged="SelectedIndexChanged" FontSize="16"/>
+                    <TextBox Name="ModeNameTextBox" Width="180" Height="40" Margin="400, 0, 0, 220" HorizontalAlignment="Left" FontSize="18"/>
+                    <!-- UserSetting 추가 버튼 -->
+                    <Button Name="ModeAddButton" Width="40" Height="40" Margin="620, 0, 0, 220" HorizontalAlignment="Left" Click="ModeButtonClick">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Grid>
+                                    <Image Name="UserSettingAddButton" Source="/Image/UserSettingAdd.png"/>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="Button.IsMouseOver" Value="True">
+                                        <Setter Property="Source" TargetName="UserSettingAddButton" Value="/Image/UserSettingAdd Clicked.png"/>
+                                        <Setter Property="Cursor" Value="Hand"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <!-- UserSetting 삭제 버튼 -->
+                    <Button Name="ModeRemoveButton" Width="40" Height="40" Margin="660, 0, 0, 220" HorizontalAlignment="Left" Click="ModeButtonClick">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Grid>
+                                    <Image Name="UserSettingRemoveButton" Source="/Image/UserSettingRemove.png"/>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="Button.IsMouseOver" Value="True">
+                                        <Setter Property="Source" TargetName="UserSettingRemoveButton" Value="/Image/UserSettingRemove Clicked.png"/>
+                                        <Setter Property="Cursor" Value="Hand"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <!-- Up -->
+                    <TextBlock Width="100" Height="50" FontSize="18" Margin="80, 210, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top">Up</TextBlock>
+                    <ComboBox Name="UpComboBox" Width="180" Height="20" Margin="180, 210, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionChanged="ChangedIndex"/>
+
+                    <!-- Down -->
+                    <TextBlock Width="100" Height="50" FontSize="18" Margin="400, 210, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top">Down</TextBlock>
+                    <ComboBox Name="DownComboBox" Width="180" Height="20" Margin="500, 210, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionChanged="ChangedIndex"/>
+
+                    <!-- Left -->
+                    <TextBlock Width="100" Height="50" FontSize="18" Margin="80, 260, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top">Left</TextBlock>
+                    <ComboBox Name="LeftComboBox" Width="180" Height="20" Margin="180, 260, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionChanged="ChangedIndex"/>
+
+                    <!-- Right -->
+                    <TextBlock Width="100" Height="50" FontSize="18" Margin="400, 260, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top">Right</TextBlock>
+                    <ComboBox Name="RightComboBox" Width="180" Height="20" Margin="500, 260, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionChanged="ChangedIndex"/>
+
+                    <!-- Drag Up -->
+                    <TextBlock Width="100" Height="50" FontSize="18" Margin="80, 310, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top">Drag up</TextBlock>
+                    <ComboBox Name="DragUpComboBox" Width="180" Height="20" Margin="180, 310, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionChanged="ChangedIndex"/>
+
+                    <!-- Drag Down -->
+                    <TextBlock Width="100" Height="50" FontSize="18" Margin="400, 310, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top">Drag down</TextBlock>
+                    <ComboBox Name="DragDownComboBox" Width="180" Height="20" Margin="500, 310, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionChanged="ChangedIndex"/>
+
+                    <!-- Left Button -->
+                    <TextBlock Width="100" Height="50" FontSize="18" Margin="80, 360, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top">L Button</TextBlock>
+                    <ComboBox Name="Button1ComboBox" Width="180" Height="20" Margin="180, 360, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionChanged="ChangedIndex"/>
+
+                    <!-- Right Button -->
+                    <TextBlock Width="100" Height="50" FontSize="18" Margin="400, 360, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top">R Button</TextBlock>
+                    <ComboBox Name="Button2ComboBox" Width="180" Height="20" Margin="500, 360, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionChanged="ChangedIndex"/>
+                </Grid>
+            </Controls:Flyout>
+
+            <!-- 설정 페이지 구현 -->
+            <Controls:Flyout Name="SettingPage" Margin="0, 0, 0, 0" VerticalAlignment="Top" Header="Back" Position="Right" Width="800" Height="520" Theme="Light">
+                <Grid>
+                    <!-- 기타 -->
+                    <Image Name="Setting_Icon" Source="/Image/Setting Background.png" Width="30" Margin="60, 0, 0, 380" HorizontalAlignment="Left"/>
+                    <TextBlock Name="Setting_Page_Title" Width="200" Height="100" FontSize="20" Margin="100, 0, 0, 300" HorizontalAlignment="Left">기타 설정</TextBlock>
+
+                    <!-- 설정 초기화 버튼 -->
+                    <Button Width="200" Margin="100, 0, 0, 250" HorizontalAlignment="Left" Click="Init_Button_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Grid>
+                                    <Image Name="Initialize_Button" Source="/Image/Initialize Button.png"/>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="Button.IsMouseOver" Value="True">
+                                        <Setter Property="Source" TargetName="Initialize_Button" Value="/Image/Initialize Button Clicked.png"/>
+                                        <Setter Property="Cursor" Value="Hand"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Width="300" Margin="110, 0, 0, 100" HorizontalAlignment="Left" Click="Driver_Button_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Grid>
+                                    <Image Name="DeviceDriver_Button" Source="/Image/Device Driver Button.png"/>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="Button.IsMouseOver" Value="True">
+                                        <Setter Property="Source" TargetName="DeviceDriver_Button" Value="/Image/Device Driver Button Clicked.png"/>
+                                        <Setter Property="Cursor" Value="Hand"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <!-- Virtual Desktop -->
+                    <Button Name ="VirtualDesktopButton" Width="220" Margin="450, 0, 0, 260" HorizontalAlignment="Left" Click="Virtual_Desktop_Button_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Grid>
+                                    <Image Name="VirtualDesktop_Button" Source="/Image/Virtual Desktop Button.png"/>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="Button.IsMouseOver" Value="True">
+                                        <Setter Property="Source" TargetName="VirtualDesktop_Button" Value="/Image/Virtual Desktop Button Clicked.png"/>
+                                        <Setter Property="Cursor" Value="Hand"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button Name ="Auto_RID_Event" Width="1" Height="1" Margin="300, 0, 0, 260" HorizontalAlignment="Left" Click="Device_Driver_Button_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Grid>
+                                    <Image Name="VirtualDesktop_Button" Source="/Image/Virtual Desktop Button.png"/>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="Button.IsMouseOver" Value="True">
+                                        <Setter Property="Source" TargetName="VirtualDesktop_Button" Value="/Image/Virtual Desktop Button Clicked.png"/>
+                                        <Setter Property="Cursor" Value="Hand"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <!-- 기타 설정 구현부 -->
+                    <Image Name="ETC_Setting_Button" Source="/Image/ETC Setting Button.png" Width="180" Margin="110, 50, 0, 0" HorizontalAlignment="Left"/>
+
+                    <TextBlock FontSize="16" Margin="180, 260, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top">색상 설정</TextBlock>
+
+                    <Image Width="35" Height="35" Margin="120, 300, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Image/color/Crimson.jpg"/>
+                    <Button Name="Crimson" Width="35" Height="35" Margin="120, 300, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ColorChange" BorderThickness="0" Focusable="False" Opacity="0.25"/>
+
+                    <Image Width="35" Height="35" Margin="155, 300, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Image/color/Magenta.jpg"/>
+                    <Button Name="Magenta" Width="35" Height="35" Margin="155, 300, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ColorChange" BorderThickness="0" Focusable="False" Opacity="0.25"/>
+
+                    <Image Width="35" Height="35" Margin="190, 300, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Image/color/Blue.jpg"/>
+                    <Button Name="Blue" Width="35" Height="35" Margin="190, 300, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ColorChange" BorderThickness="0" Focusable="False" Opacity="0.25"/>
+
+                    <Image Width="35" Height="35" Margin="225, 300, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Image/color/Purple.jpg"/>
+                    <Button Name="Purple" Width="35" Height="35" Margin="225, 300, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ColorChange" BorderThickness="0" Focusable="False" Opacity="0.25"/>
+
+                    <Image Width="35" Height="35" Margin="260, 300, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Image/color/Orange.jpg"/>
+                    <Button Name="Orange" Width="35" Height="35" Margin="260, 300, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ColorChange" BorderThickness="0" Focusable="False" Opacity="0.25"/>
+
+                    <Image Width="35" Height="35" Margin="295, 300, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Image/color/Lime.jpg"/>
+                    <Button Name="Lime" Width="35" Height="35" Margin="295, 300, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ColorChange" BorderThickness="0" Focusable="False" Opacity="0.25"/>
+
+                    <Image Width="35" Height="35" Margin="330, 300, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Image/color/Emerald.jpg"/>
+                    <Button Name="Emerald" Width="35" Height="35" Margin="330, 300, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ColorChange" BorderThickness="0" Focusable="False" Opacity="0.25"/>
+
+                    <Image Width="35" Height="35" Margin="365, 300, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Image/color/Teal.jpg"/>
+                    <Button Name="Teal" Width="35" Height="35" Margin="365, 300, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ColorChange" BorderThickness="0" Focusable="False" Opacity="0.25"/>
+                    
+                    <!-- 두번째 줄 -->
+                    <Image Width="35" Height="35" Margin="120, 335, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Image/color/Red.jpg"/>
+                    <Button Name="Red" Width="35" Height="35" Margin="120, 335, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ColorChange" BorderThickness="0" Focusable="False" Opacity="0.25"/>
+
+                    <Image Width="35" Height="35" Margin="155, 335, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Image/color/Pink.jpg"/>
+                    <Button Name="Pink" Width="35" Height="35" Margin="155, 335, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ColorChange" BorderThickness="0" Focusable="False" Opacity="0.25"/>
+
+                    <Image Width="35" Height="35" Margin="190, 335, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Image/color/Green.jpg"/>
+                    <Button Name="Green" Width="35" Height="35" Margin="190, 335, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ColorChange" BorderThickness="0" Focusable="False" Opacity="0.25"/>
+
+                    <Image Width="35" Height="35" Margin="225, 335, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Image/color/Amber.jpg"/>
+                    <Button Name="Amber" Width="35" Height="35" Margin="225, 335, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ColorChange" BorderThickness="0" Focusable="False" Opacity="0.25"/>
+
+                    <Image Width="35" Height="35" Margin="260, 335, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Image/color/Yellow.jpg"/>
+                    <Button Name="Yellow" Width="35" Height="35" Margin="260, 335, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ColorChange" BorderThickness="0" Focusable="False" Opacity="0.25"/>
+
+                    <Image Width="35" Height="35" Margin="295, 335, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Image/color/Brown.jpg"/>
+                    <Button Name="Brown" Width="35" Height="35" Margin="295, 335, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ColorChange" BorderThickness="0" Focusable="False" Opacity="0.25"/>
+
+                    <Image Width="35" Height="35" Margin="330, 335, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Image/color/Olive.jpg"/>
+                    <Button Name="Olive" Width="35" Height="35" Margin="330, 335, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ColorChange" BorderThickness="0" Focusable="False" Opacity="0.25"/>
+
+                    <Image Width="35" Height="35" Margin="365, 335, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Image/color/Steel.jpg"/>
+                    <Button Name="Steel" Width="35" Height="35" Margin="365, 335, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ColorChange" BorderThickness="0" Focusable="False" Opacity="0.25"/>
+                    
+                    <!-- 세번째 줄 -->
+                    <Image Width="35" Height="35" Margin="120, 370, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Image/color/Cyan.jpg"/>
+                    <Button Name="Cyan" Width="35" Height="35" Margin="120, 370, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ColorChange" BorderThickness="0" Focusable="False" Opacity="0.25"/>
+
+                    <Image Width="35" Height="35" Margin="155, 370, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Image/color/Cobalt.jpg"/>
+                    <Button Name="Cobalt" Width="35" Height="35" Margin="155, 370, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ColorChange" BorderThickness="0" Focusable="False" Opacity="0.25"/>
+
+                    <Image Width="35" Height="35" Margin="190, 370, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Image/color/Indigo.jpg"/>
+                    <Button Name="Indigo" Width="35" Height="35" Margin="190, 370, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ColorChange" BorderThickness="0" Focusable="False" Opacity="0.25"/>
+
+                    <Image Width="35" Height="35" Margin="225, 370, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Image/color/Violet.jpg"/>
+                    <Button Name="Violet" Width="35" Height="35" Margin="225, 370, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ColorChange" BorderThickness="0" Focusable="False" Opacity="0.25"/>
+
+                    <Image Width="35" Height="35" Margin="260, 370, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Image/color/Mauve.jpg"/>
+                    <Button Name="Mauve" Width="35" Height="35" Margin="260, 370, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ColorChange" BorderThickness="0" Focusable="False" Opacity="0.25"/>
+
+                    <Image Width="35" Height="35" Margin="295, 370, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Image/color/Taupe.jpg"/>
+                    <Button Name="Taupe" Width="35" Height="35" Margin="295, 370, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ColorChange" BorderThickness="0" Focusable="False" Opacity="0.25"/>
+
+                    <Image Width="35" Height="35" Margin="330, 370, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Image/color/Sienna.jpg"/>
+                    <Button Name="Sienna" Width="35" Height="35" Margin="330, 370, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ColorChange" BorderThickness="0" Focusable="False" Opacity="0.25"/>
+
+                </Grid>
+            </Controls:Flyout>
+        </Controls:FlyoutsControl>
+    </Controls:MetroWindow.Flyouts>
+
+    <!-- 메인 페이지 구현 -->
+    <Grid Name="RootLayout" Width="800" Height="600">
+        <!-- 트랙볼 버튼 -->
+        <Image Name="Trackball_Background_Image" Height="220" Margin="10,185,225,215" Source="Image/Trackball Background.png" HorizontalAlignment="Left"/>
+        <Button Height="220" HorizontalAlignment="Left" Margin="10,185,0,215" Click="Trackball_Button_Click" MouseDown="Trackball_Button_Pressed" MouseEnter="Trackball_Button_Over" MouseLeave="Trackball_Button_Base" RenderTransformOrigin="0.5, 0.5">
+            <Button.RenderTransform>
+                <RotateTransform/>
+            </Button.RenderTransform>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.Angle" To="-360" Duration="0:0:2" RepeatBehavior="Forever"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.Angle" To="0" Duration="0:0:0"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+            
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image x:Name="Trackball_Background" Source="/Image/Trackball.png"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter Property="Source" TargetName="Trackball_Background" Value="/Image/Trackball On.png"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                        <Trigger Property="Button.IsPressed" Value="True">
+                            <Setter Property="Source" TargetName="Trackball_Background" Value="/Image/Trackball Clicked.png"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <!-- 설정 버튼 -->
+        <Button Height="200" Margin="459,185,0,215" HorizontalAlignment="Left" Click="Setting_Button_Click"  RenderTransformOrigin="0.5, 0.5">
+            <Button.RenderTransform>
+                <RotateTransform/>
+            </Button.RenderTransform>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.Angle" To="-360" Duration="0:0:10" RepeatBehavior="Forever"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.Angle" To="0" Duration="0:0:0"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+            
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image x:Name="Setting_Background" Source="/Image/Setting Off.png"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter Property="Source" TargetName="Setting_Background" Value="/Image/Setting On.png"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                        <Trigger Property="Button.IsPressed" Value="True">
+                            <Setter Property="Source" TargetName="Setting_Background" Value="/Image/Setting Clicked.png"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+</Controls:MetroWindow>
