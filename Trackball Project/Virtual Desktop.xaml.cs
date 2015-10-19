@@ -370,7 +370,6 @@ namespace virtual_desktop
         {
             set_focus(focus + 1);
             move_grid();
-
         }
 
         void Move_to_left()
